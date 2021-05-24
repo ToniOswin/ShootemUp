@@ -16,18 +16,11 @@ public class EnemyShoot : MonoBehaviour
     int limit;
     AudioSource enemySource;
 
-    // Start is called before the first frame update
     void Start()
     {
         enemySource = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>();
         limit = starterlimit;
         StartCoroutine(Delay());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     void ShootBullet(int shootsNumber)
     {

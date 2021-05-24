@@ -8,7 +8,6 @@ public class SpawnPoint : MonoBehaviour
     GameObject[] spawn;
 
     public bool isRandom;
-    // Start is called before the first frame update
     void Start()
     {
         int rand = Random.Range(0, spawn.Length);

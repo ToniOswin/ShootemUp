@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     Shoot shootScript;
     Animator playerAnim;
     GameManager gm;
-    // Start is called before the first frame update
     void Start()
     {
         shootScript = GetComponent<Shoot>();
@@ -20,7 +19,6 @@ public class Player : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rB.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0));

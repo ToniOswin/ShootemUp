@@ -11,8 +11,6 @@ public class Granade : MonoBehaviour
     {
         gameM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), speed * Time.deltaTime);

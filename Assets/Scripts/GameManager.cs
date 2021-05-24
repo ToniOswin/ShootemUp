@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI PuntuationText;
     [SerializeField]
     TextMeshProUGUI MaxPuntuationText;
-    // Start is called before the first frame update
     void Start()
     {
         PlayerPoints = PlayerPrefs.GetInt("Points", 0);

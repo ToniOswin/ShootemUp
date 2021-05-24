@@ -17,8 +17,6 @@ public class EnemyStats : MonoBehaviour
         gameM = GameObject.Find("GameManager").GetComponent<GameManager>();
         shootScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(transform.position.x <= -10)

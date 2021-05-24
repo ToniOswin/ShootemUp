@@ -11,8 +11,6 @@ public class Bullet : MonoBehaviour
     {
         StartCoroutine(destroy());
     }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(direction * Time.deltaTime * speed);
