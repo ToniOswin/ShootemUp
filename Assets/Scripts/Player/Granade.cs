@@ -5,12 +5,6 @@ using UnityEngine;
 public class Granade : MonoBehaviour
 {
     int speed = 10;
-    GameManager gameM;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameM = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), speed * Time.deltaTime);
@@ -23,12 +17,13 @@ public class Granade : MonoBehaviour
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(3);
-        GameObject[] enemies =  GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
-        gameM.ExplosionGranade(gameObject.transform);
+        //GameObject[] enemies =  GameObject.FindGameObjectsWithTag("Enemy");
+        //foreach(GameObject enemy in enemies)
+        //{
+        //    Destroy(enemy);
+        //}
+        //gameM.ExplosionGranade(gameObject.transform);
+        Shoot.playerShoot.ExplodeGranade();
         Destroy(gameObject);
     }
 }

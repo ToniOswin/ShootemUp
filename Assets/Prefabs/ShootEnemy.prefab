@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658387681185334930}
-  - component: {fileID: 1256079538895016084}
+  - component: {fileID: 4069473626869911512}
   - component: {fileID: 694954291608919637}
   - component: {fileID: 7130579261852253987}
   - component: {fileID: 7813564088682151989}
@@ -147,7 +147,7 @@ Transform:
   m_Father: {fileID: 6905971172574656781}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1256079538895016084
+--- !u!114 &4069473626869911512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,13 +156,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4692471186578674092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40caea79c5515294a8f438f3fc506681, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f52f5e338097ec45afcd9967a74c9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 7
-  points: 50
+  points: 70
   DropsPU: 0
-  powerUp: {fileID: 8430710925104913611, guid: 733c8d9844116f840b9a46e2dd16ddc2, type: 3}
+  powerUp: {fileID: 0}
 --- !u!114 &694954291608919637
 MonoBehaviour:
   m_ObjectHideFlags: 0

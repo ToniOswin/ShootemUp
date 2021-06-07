@@ -6,17 +6,9 @@ public class EnemyStats : MonoBehaviour
 {
     public float life;
     public int points;
-    GameManager gameM;
-    Shoot shootScript;
-
     public bool DropsPU;
     [SerializeField]
     GameObject powerUp;
-    void Start()
-    {
-        gameM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        shootScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>();
-    }
     void Update()
     {
         if(transform.position.x <= -10)
@@ -43,15 +35,15 @@ public class EnemyStats : MonoBehaviour
         Instantiate(powerUp, transform.position, powerUp.transform.rotation);
     }
 
-    void Die()
+    public void Die()
     {
-        gameM.ExplosionPS(gameObject.transform);
-        if(DropsPU == true && shootScript.numberOfShoots <4 && GameObject.FindGameObjectWithTag("PowerUp") == null)
+        GameManager.gameM.ExplosionPS(gameObject.transform);
+        if(DropsPU == true &&  Shoot.playerShoot.numberOfShoots < 4 && GameObject.FindGameObjectWithTag("PowerUp") == null)
         {
             DropPowerUp();
         }
         Destroy(gameObject);
-        gameM.GetPoints(points);
+        GameManager.gameM.GetPoints(points);
     }
     private void OnDestroy()
     {
@@ -59,5 +51,5 @@ public class EnemyStats : MonoBehaviour
         {
             Destroy(transform.parent.gameObject);
         }
-    }   
+    }  
 }

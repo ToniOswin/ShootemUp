@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    Shoot shootScript;
     void Start()
     {
-        shootScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Shoot>();
         StartCoroutine(Dissapear());
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && shootScript.numberOfShoots <4)
+        if (other.gameObject.CompareTag("Player") && Shoot.playerShoot.numberOfShoots <4)
         {
-            shootScript.numberOfShoots++;
+            Shoot.playerShoot.numberOfShoots++;
             Destroy(gameObject);
         }
     }

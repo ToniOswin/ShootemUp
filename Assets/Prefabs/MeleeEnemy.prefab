@@ -4896,8 +4896,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8937923652274632448}
   - component: {fileID: 6352802621991663498}
-  - component: {fileID: 5246942620483977390}
   - component: {fileID: 6865413124824767097}
+  - component: {fileID: 5700355052676088472}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -4935,22 +4935,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   damage: 10
---- !u!114 &5246942620483977390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8689833823054914993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40caea79c5515294a8f438f3fc506681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
-  points: 20
-  DropsPU: 0
-  powerUp: {fileID: 0}
 --- !u!65 &6865413124824767097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4964,3 +4948,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8155805, y: 1.2067733, z: 1}
   m_Center: {x: -0.15927137, y: -0.053090453, z: 0}
+--- !u!114 &5700355052676088472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689833823054914993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90d1825a2c7a6a42af34a87e94537df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
+  points: 20
+  DropsPU: 0
+  powerUp: {fileID: 0}

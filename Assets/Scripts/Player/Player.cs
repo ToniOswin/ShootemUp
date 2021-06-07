@@ -8,15 +8,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed;
 
-    Shoot shootScript;
     Animator playerAnim;
-    GameManager gm;
     void Start()
     {
-        shootScript = GetComponent<Shoot>();
         rB = gameObject.GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -30,18 +26,18 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            gm.LostHealth(other.gameObject.GetComponent<Bullet>().damage);
+            GameManager.gameM.LostHealth(other.gameObject.GetComponent<Bullet>().damage);
             Destroy(other.gameObject);
         }
         else if(other.gameObject.CompareTag("PointedBullet"))
         {
-            gm.LostHealth(other.gameObject.GetComponent<ShootToPlayer>().damage);
+            GameManager.gameM.LostHealth(other.gameObject.GetComponent<ShootToPlayer>().damage);
             Destroy(other.gameObject);
         }
 
-        if(gm.PlayerHealth <= 0)
+        if( GameManager.gameM.PlayerHealth<=0)
         {
-            gm.PlayerDie();
+            GameManager.gameM.PlayerDie();
         }
     }
 

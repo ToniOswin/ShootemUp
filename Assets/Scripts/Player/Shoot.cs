@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
+    public static Shoot playerShoot = null;
+
     [SerializeField]
     GameObject proyectilePrefab;
     [SerializeField]
@@ -23,10 +25,27 @@ public class Shoot : MonoBehaviour
     float maxDelay;
     float delay;
 
-    float maxChargueTime = 60;
+    float maxChargueTime = 20;
     public float chargeTime;
     public List<GameObject> pooledObjects;
     public int amountToPool;
+
+    //delegate
+    public delegate void ThrowMegaBombDelegate();
+    public event ThrowMegaBombDelegate ThrowMegaBombReleased;
+
+    private void Awake()
+    {
+        if(playerShoot == null)
+        {
+            playerShoot = this;
+        }
+        else if(playerShoot != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -61,6 +80,11 @@ public class Shoot : MonoBehaviour
             ChargeGranade();
             sliderBoom.value = chargeTime;
         }
+    }
+
+    public void ExplodeGranade()
+    {
+        ThrowMegaBombReleased?.Invoke();
     }
 
     void ShootBullets(int numberOfShoots)

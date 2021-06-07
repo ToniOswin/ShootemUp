@@ -5,13 +5,7 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     public float speed = 4;
-    GameManager gm;
     public int damage;
-    private void Start()
-    {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
     void Update()
     {
         transform.Translate(Vector2.left * Time.deltaTime * speed);
@@ -21,7 +15,7 @@ public class MeleeEnemy : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("sa chocao con el jugador");
-            gm.LostHealth(damage);
+            GameManager.gameM.LostHealth(damage);
             Destroy(gameObject);
         }
     }

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gameM;
     public int PlayerPoints;
     [SerializeField]
     float PlayerMaxHealth;
@@ -30,6 +31,18 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI PuntuationText;
     [SerializeField]
     TextMeshProUGUI MaxPuntuationText;
+    private void Awake()
+    {
+        if (gameM == null)
+        {
+           gameM = this;
+        }
+        else if (gameM != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         PlayerPoints = PlayerPrefs.GetInt("Points", 0);
